@@ -1,0 +1,1 @@
+Place your theme image files in this directory.

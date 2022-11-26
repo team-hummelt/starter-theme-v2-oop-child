@@ -1,0 +1,1 @@
+Place your theme function files in this directory.
