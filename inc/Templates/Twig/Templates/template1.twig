@@ -1,0 +1,46 @@
+{% extends "@layout/default-template.twig" %}
+ {% block splides %}
+     {% for d in data %}
+         <li class="splide__slide d-flex flex-column align-items-center">
+             <div class="scene scene--card">
+                 <div class="card-flip ">
+                     <div class="card__face card__face--front py-3 px-2">
+                         <img class="circle img{{ d.post_id }} splide-img" data-splide-lazy-srcset="{{ d.wp_get_attachment_image_srcset }}"
+                              data-splide-lazy="{{ d.title_img }}" alt="{{ d.meta.name }}">
+                         <h4 class="team-description text-center font-blue pt-3">
+                             {{ d.meta.name }}&nbsp;
+                             <span class="d-block font-back fs-6 fw-normal">{{ d.meta.position }}&nbsp;</span>
+                         </h4>
+                     </div>{# div front #}
+                     <div class="card__face card__face--back">
+                         <img class="splide-img" data-splide-lazy-srcset="{{ d.wp_get_attachment_image_srcset }}"
+                              data-splide-lazy="{{ d.title_img }}" alt="{{ d.meta.name }}">
+                         <div class="back-arbeitsgebiet ">
+                             <div class="d-flex flex-column align-items-center justify-content-center h-100">
+                                <div class="text-center fw-normal text-white">
+                                    <i class="bi bi-diamond" style="font-size: .65rem"></i>
+                                    <p class="my-2">{{ d.meta.arbeitsgebiet1 }}</p>
+                                    <p class="mb-2">{{ d.meta.arbeitsgebiet2 }}</p>
+                                    <p class="mb-2">{{ d.meta.arbeitsgebiet3 }}</p>
+                                    <p class="mb-2">{{ d.meta.arbeitsgebiet4 }}</p>
+                                    <p class="mb-2">{{ d.meta.arbeitsgebiet5 }}</p>
+                                    <p class="mb-2">{{ d.meta.arbeitsgebiet6 }}</p>
+                                </div>
+                             </div>
+                         </div>
+                         <div class="mt-auto back-footer bg-white shadow-sm">
+                             <h5 class="pt-2 font-blue text-center">{{ d.meta.name }}
+                                 <span class="d-block font-back fs-6 p-2 fw-normal min-height">{{ d.meta.position }}&nbsp;</span>
+                             </h5>
+                         </div>
+                     </div>
+                 </div>{# div flip #}
+             </div>
+             {% if d.meta.lebenslauf %}
+                 <small class="text-center d-block pt-3">
+                     <span data-id="{{ d.post_id }}" class="get-lebenslauf lebenslauf{{ d.post_id }}">Lebenslauf</span>
+                 </small>
+             {% endif %}
+         </li>
+     {% endfor %}
+ {% endblock %}

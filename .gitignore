@@ -1,3 +1,4 @@
 .idea
 .github
 .vscode
+/inc/composer.lock
