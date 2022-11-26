@@ -1,0 +1,11 @@
+{
+  "name": "hupa/child-theme-oop",
+  "type": "child-theme",
+  "license": "MIT",
+  "description": "",
+  "homepage": "https://wwdh.de/",
+  "require": {
+    "php": "~7.4",
+    "twig/twig": "^3.0"
+  }
+}

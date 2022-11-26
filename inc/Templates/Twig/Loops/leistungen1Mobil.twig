@@ -1,0 +1,34 @@
+{% if first %}
+<div data-last="{{ last }}" id="leistungenGrid" class="row g-3 leistungen-grid-mobil">
+    {% endif %}
+    {% for d in data %}
+        {% set delay =  loop.index0 * 80 %}
+        <div class="grid-item item-mobile col-md-6 col-12 position-relative theme-wow-animation wow animate__fadeIn"
+             data-type-animation="slideInUp"
+             data-wow-iteration="1"
+             data-wow-duration="0.5s"
+             data-wow-delay="{{ 400 + delay }}ms"
+             data-wow-offset="5">
+            <div class="grid-card-flip">
+                <div class="face_card_grid front__card_grid shadow-sm">
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+                        <img class="leistungen-img flex-grow-1" src="{{ d.title_img }}" alt="{{ d.post_title }}">
+                        <p class="mt-auto text-center">{{ d.post_title }}</p>
+                    </div>
+                </div>
+                <div class="face_card_grid back_card_grid shadow-sm">
+                    {% autoescape false %}  {{ d.post_content }} {% endautoescape %}
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    {% if first %}
+</div>
+    <div class="text-center">
+        <button data-category="{{ catId }}" data-template="{{ templateId }}" data-handle="leistung" data-page="2"
+                class="btn loadLeistungen btn-load-more my-4">
+            MEHR
+            ANZEIGEN
+        </button>
+    </div>
+{% endif %}
