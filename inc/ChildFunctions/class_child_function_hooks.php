@@ -53,9 +53,14 @@ class Child_Function_Hooks
 
         $modificated = date('YmdHi', filemtime(get_stylesheet_directory() . '/assets/js/lib/theme.js'));
         $modificated = date('YmdHi', filemtime(get_stylesheet_directory() . '/assets/js/child.js'));
+        $modificated = date('YmdHi', filemtime(get_stylesheet_directory() . '/assets/js/lib/video-gallery.js'));
         $modificated = date('YmdHi', filemtime(get_stylesheet_directory() . '/assets/js/lib/hupa-starter-theme.js'));
 
-        wp_enqueue_script('bootscore-script', get_stylesheet_directory_uri() . '/assets/js/lib/theme.js', false, $modificated, true);
+        // JOB HUPA-STARTER-THEME Video Gallery JS
+        wp_enqueue_script('hupa-starter-video-script', get_stylesheet_directory_uri(). '/assets/js/lib/video-gallery.js', array(), $modificated, true);
+        // JOB HUPA-STARTER-THEME JS
+        wp_enqueue_script('hupa-starter-script', get_stylesheet_directory_uri() . '/assets/js/lib/hupa-starter-theme.js', false, $modificated, true);
+
         wp_enqueue_script('child-script', get_stylesheet_directory_uri() . '/assets/js/child.js', false, $modificated, true);
         wp_enqueue_script('hupa-starter-script', get_stylesheet_directory_uri() . '/assets/js/lib/hupa-starter-theme.js', false, $modificated, true);
 
