@@ -2,7 +2,7 @@
 hummelt und partner | Werbeagentur GmbH
 
 [![release](https://img.shields.io/github/v/release/team-hummelt/starter-theme-v2-oop-child?style=plastic)](https://github.com/team-hummelt/starter-theme-v2-oop-child)
-[![Starter-Theme-V2-OOP-Child Release](https://img.shields.io/github/release-date/starter-theme-v2-oop-child)](https://github.com/team-hummelt/starter-theme-v2-oop-child/releases/latest)
+[![Hupa Release](https://img.shields.io/github/release-date/starter-theme-v2-oop-child)](https://github.com/team-hummelt/starter-theme-v2-oop-child/releases/latest)
 [![GitHub](https://img.shields.io/github/license/team-hummelt/starter-theme-v2-oop-child)](https://github.com/team-hummelt/starter-theme-v2-oop-child/blob/master/LICENSE.txt)
 
 ***
@@ -16,10 +16,10 @@ Header-, Footer- und 404-Widgets.
 ***
 * Contributors: jwiecker
 * Tags: Hupa Theme, Bootstrap
-* Version: 2.0.0
-* Stable tag: 2.0.0
+* Version: 2.0.1
+* Stable tag: 2.0.1
 * Requires at least: 5.6
-* Tested up to: 6.0.1
+* Tested up to: 6.1.1
 * Requires PHP: 7.4
 * 
 #### Theme ist nicht mit der Version 1 kompatibel.
