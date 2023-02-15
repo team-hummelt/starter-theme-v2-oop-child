@@ -1,0 +1,35 @@
+@import "variables";
+/** NAVIGATION */
+#nav-main-starter.navbar-root {
+
+  border-bottom: unset !important;
+
+  .navbar-nav .nav-link:not(.mega-menu-wrapper .nav-link) {
+    margin: 0 0.1rem;
+    padding: 0.5rem 1.25rem 0.5rem 1.25rem !important;
+    white-space: nowrap !important;
+  }
+ .dropdown-menu  {
+   border-radius: 0!important;
+   border-top: 3px solid $blue;
+    min-width: 220px;
+   li.menu-item {
+     border-top: unset!important;
+   }
+  }
+
+  .menu-item {
+    a.active {
+      color: $blue;
+      border-bottom: unset !important;
+      text-shadow: 0.03rem 0 0 $blue !important;
+    }
+    &:hover a:not(.menu-item a) {
+      border-bottom: unset !important;
+      text-shadow: 0.03rem 0 0 $blue !important;
+    }
+  }
+  .nav-link:focus, .nav-link:hover {
+    color: $blue!important;
+  }
+}

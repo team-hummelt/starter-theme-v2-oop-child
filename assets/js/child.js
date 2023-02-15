@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let currentPage = $('#theme-current-page');
         if(currentPage.length){
             let formData = {
-                'method': 'ajax-test'
+                'method': 'ajax_test'
             }
 
             xhr_child_ajax_handle(formData, false, current_page_callback)

@@ -1,0 +1,64 @@
+$navHandyColor:#009FDA;
+.wp-block-columns:not(.is-not-stacked-on-mobile) > .wp-block-column {
+  flex-basis: unset;
+  flex-grow: unset;
+}
+
+body .wp-block-gallery.has-nested-images figure.wp-block-image img {
+  display: block;
+  height: auto;
+  max-width: 100%!important;
+}
+
+.fw-semibold {
+  text-shadow: 0.03rem 0 0 currentColor !important;
+}
+
+#page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+#content {
+  min-height: unset;
+  padding-top: 0 !important;
+}
+
+.site-content {
+  //height: 100%;
+}
+
+.footer {
+  margin-top: auto;
+}
+
+.form-control:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  overflow: hidden !important;
+}
+
+img.logo.md, img.logo.sm {
+  height: auto;
+  width: 100%;
+  transition: all 350ms linear !important;
+}
+
+button.navbar-toggler i.fa {
+  background-color: $navHandyColor!important;
+}
+button.navbar-toggler i.fa:before {
+  background-color: $navHandyColor!important;
+}
+button.navbar-toggler i.fa:after {
+  background-color: $navHandyColor!important;
+}
+.btn2 .icon:before {
+  background-color: $navHandyColor!important;
+}
+.btn2 .icon:after {
+  background-color: $navHandyColor!important;
+}
+
+

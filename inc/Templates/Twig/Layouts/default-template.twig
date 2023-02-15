@@ -1,7 +1,33 @@
-<section id="slider-container" class="splide" aria-label="Beautiful Images">
-    <div class="splide__track">
-        <ul class="splide__list">
-            {% block splides %} {% endblock %}
-        </ul>
+<div class="wp-bs-starter-wrapper">
+    <div class="{% if container is defined %}{{ container }}{% else %}container-fluid{% endif %}">
+        <div class="card card-license shadow-sm">
+            <h5 class="card-header d-flex align-items-center bg-hupa py-4">
+                <i class="icon-hupa-white d-block mt-2" style="font-size: 2rem"></i>&nbsp;
+                {% if headertxt is defined %}{{ headertxt }}{% else %} Theme Einstellungen{% endif %} </h5>
+            <div class="card-body pb-4" style="min-height: 72vh">
+                <div class="d-flex align-items-center">
+                    <h5 class="card-title"><i
+                                class="hupa-color fa fa-arrow-circle-right"></i>
+                        <span id="currentSideTitle">{% if subtext is defined %}{{ subtext }}{% else %} Settings{% endif %}</span>
+                    </h5>
+                </div>
+                <hr>
+                <div class="col-12 mx-auto">
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-light py-3 fs-5">
+                            Theme {% if subtext is defined %}{{ subtext }}{% else %} Settings{% endif %}
+                        </div>
+                        {% block content %}{% endblock %}
+                    </div>
+                </div>
+                <div class="bottom-0 end-0 position-absolute my-1 me-3 text-end">
+                    <small class="small-xl">
+                       Child-Version: <span class="text-danger">v {{ 'version'|version }}</span>
+                    </small>
+                </div>
+            </div>
+        </div>
     </div>
-</section>
+</div>
+<div id="snackbar-success"></div>
+<div id="snackbar-warning"></div>

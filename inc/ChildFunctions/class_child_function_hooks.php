@@ -36,6 +36,9 @@ class Child_Function_Hooks
         <?php
     }
 
+    /**
+     * @throws Exception
+     */
     public function public_ajax_ChildNoAdmin(): void
     {
         check_ajax_referer('child_public_handle');
@@ -49,8 +52,7 @@ class Child_Function_Hooks
         // style.css
         wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
         // child-style.css
-        wp_enqueue_style('starter-v2-child-style', get_stylesheet_directory_uri() . '/assets/css/child-style.css');
-
+        //wp_enqueue_style('starter-v2-child-style', get_stylesheet_directory_uri() . '/assets/css/child-style.css');
         $modificated = date('YmdHi', filemtime(get_stylesheet_directory() . '/assets/js/lib/theme.js'));
         $modificated = date('YmdHi', filemtime(get_stylesheet_directory() . '/assets/js/child.js'));
         $modificated = date('YmdHi', filemtime(get_stylesheet_directory() . '/assets/js/lib/video-gallery.js'));
@@ -62,7 +64,6 @@ class Child_Function_Hooks
         wp_enqueue_script('hupa-starter-script', get_stylesheet_directory_uri() . '/assets/js/lib/hupa-starter-theme.js', false, $modificated, true);
 
         wp_enqueue_script('child-script', get_stylesheet_directory_uri() . '/assets/js/child.js', false, $modificated, true);
-        wp_enqueue_script('hupa-starter-script', get_stylesheet_directory_uri() . '/assets/js/lib/hupa-starter-theme.js', false, $modificated, true);
 
         wp_register_script('child-localize', '', [], '', true);
         wp_enqueue_script('child-localize');
