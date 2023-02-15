@@ -84,7 +84,13 @@ $pageBottomFooter = $pageSettings->show_bottom_footer;
 <div class="custom-footer-wrapper">
     <?=$pageSettings->custum_footer?>
 </div>
-<?php  if($pageSettings->show_bottom_footer): ?>
+<?php  if($pageSettings->show_bottom_footer):
+    /*if(is_singular('rss_news') ||is_singular('mitglieder')) {
+        if (get_hupa_option('kategorie_select_footer')) {
+           echo apply_filters('get_content_custom_footer', get_hupa_option('kategorie_select_footer'))->custum_footer;
+        }
+    }*/
+    ?>
     <div class="footer bootscore-info border-top py-2 text-center <?=!$pageSettings->fixed_footer ?: 'fixed-bottom'?>">
         <div class="container">
             &nbsp;<?php

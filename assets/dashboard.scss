@@ -1,0 +1,19 @@
+@import "filetree";
+.btn-toggle {
+  &:disabled {
+    background-color: #2271b1!important;
+    opacity: 1!important;
+    color: #fff!important;
+  }
+}
+.fw-semibold {
+  font-weight: 500;
+}
+.swal-error-container {
+  background: rgba(84, 90, 90, 0.90) !important;
+  color: #f1f1f1 !important;
+}
+
+body .dz-error-mark svg g g {
+  fill: #c00!important;
+}

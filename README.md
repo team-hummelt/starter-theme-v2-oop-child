@@ -11,13 +11,13 @@ Ein leistungsstarkes WordPress Theme mit WooCommerce Unterstützung von
 <a href ="https://www.hummelt-werbeagentur.de/">hummelt und partner</a>.
 Das Theme hat eine große Auswahl an Kategorie-, Seiten-, Beitrags-, Autoren- und Archivvorlagen sowie Sidebar-,
 Header-, Footer- und 404-Widgets.
-### Das Theme benötigt eine Lizenz zur Aktivierung.
+### Das Theme benötigt eine Lizenz zur Aktivierung. 
 
 ***
 * Contributors: jwiecker
 * Tags: Hupa Theme, Bootstrap
-* Version: 2.0.1
-* Stable tag: 2.0.1
+* Version: 2.0.2
+* Stable tag: 2.0.2
 * Requires at least: 5.6
 * Tested up to: 6.1.1
 * Requires PHP: 7.4

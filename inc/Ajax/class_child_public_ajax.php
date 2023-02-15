@@ -1,10 +1,14 @@
 <?php
 
 use Twig\Environment;
+use Twig\Error\LoaderError;
+use Twig\Error\RuntimeError;
+use Twig\Error\SyntaxError;
 
 class Child_Public_Ajax
 {
     protected string $method;
+    private object $responseJson;
 
     /**
      * The AJAX DATA
@@ -22,8 +26,6 @@ class Child_Public_Ajax
     protected Environment $twig;
 
     protected Register_Child_Hooks $main;
-    private string $img_size = 'full';
-
     private static $child_ajax_instance;
 
     /**
@@ -41,32 +43,25 @@ class Child_Public_Ajax
     {
         $this->main = $main;
         $this->twig = $twig;
-
-        $this->method = '';
-        if (isset($_POST['daten'])) {
-            $this->data = $_POST['daten'];
-            $this->method = filter_var($this->data['method'], FILTER_UNSAFE_RAW, FILTER_FLAG_STRIP_HIGH);
-        }
-
-        if (!$this->method) {
-            $this->method = $_POST['method'];
-        }
+        $this->method = filter_input(INPUT_POST, 'method', FILTER_UNSAFE_RAW, FILTER_FLAG_STRIP_HIGH);
+        $this->responseJson = (object)['status' => false, 'msg' => date('H:i:s'), 'type' => $this->method];
     }
-
 
     /**
      * PUBLIC AJAX RESPONSE.
+     * @throws Exception
      */
     public function public_ajax_handle(): object
     {
-        $responseJson = new stdClass();
-        $responseJson->status = false;
-        $responseJson->msg = date('H:i:s', current_time('timestamp'));
-        switch ($this->method) {
-            case 'ajax-test':
-                $responseJson->status = true;
-                break;
+        if (!method_exists($this, $this->method)) {
+            throw new Exception("Method not found!#Not Found");
         }
-        return $responseJson;
+        return call_user_func_array(self::class . '::' . $this->method, []);
+    }
+
+    private function ajax_test():object
+    {
+        $this->responseJson->status = true;
+        return  $this->responseJson;
     }
 }
