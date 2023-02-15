@@ -1,0 +1,91 @@
+.wp-block-columns:not(.is-not-stacked-on-mobile) > .wp-block-column {
+  flex-basis: unset;
+  flex-grow: unset;
+}
+
+body .wp-block-gallery.has-nested-images figure.wp-block-image img {
+  display: block;
+  height: auto;
+  max-width: 100% !important;
+}
+
+.fw-semibold {
+  text-shadow: 0.03rem 0 0 currentColor !important;
+}
+
+#page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+#content {
+  min-height: unset;
+  padding-top: 0 !important;
+}
+
+.footer {
+  margin-top: auto;
+}
+
+.form-control:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  overflow: hidden !important;
+}
+
+img.logo.md, img.logo.sm {
+  height: auto;
+  width: 100%;
+  transition: all 350ms linear !important;
+}
+
+button.navbar-toggler i.fa {
+  background-color: #009FDA !important;
+}
+
+button.navbar-toggler i.fa:before {
+  background-color: #009FDA !important;
+}
+
+button.navbar-toggler i.fa:after {
+  background-color: #009FDA !important;
+}
+
+.btn2 .icon:before {
+  background-color: #009FDA !important;
+}
+
+.btn2 .icon:after {
+  background-color: #009FDA !important;
+}
+
+/** NAVIGATION */
+#nav-main-starter.navbar-root {
+  border-bottom: unset !important;
+}
+#nav-main-starter.navbar-root .navbar-nav .nav-link:not(.mega-menu-wrapper .nav-link) {
+  margin: 0 0.1rem;
+  padding: 0.5rem 1.25rem 0.5rem 1.25rem !important;
+  white-space: nowrap !important;
+}
+#nav-main-starter.navbar-root .dropdown-menu {
+  border-radius: 0 !important;
+  border-top: 3px solid #009FDA;
+  min-width: 220px;
+}
+#nav-main-starter.navbar-root .dropdown-menu li.menu-item {
+  border-top: unset !important;
+}
+#nav-main-starter.navbar-root .menu-item a.active {
+  color: #009FDA;
+  border-bottom: unset !important;
+  text-shadow: 0.03rem 0 0 #009FDA !important;
+}
+#nav-main-starter.navbar-root .menu-item:hover a:not(.menu-item a) {
+  border-bottom: unset !important;
+  text-shadow: 0.03rem 0 0 #009FDA !important;
+}
+#nav-main-starter.navbar-root .nav-link:focus, #nav-main-starter.navbar-root .nav-link:hover {
+  color: #009FDA !important;
+}
