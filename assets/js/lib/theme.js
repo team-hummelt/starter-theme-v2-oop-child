@@ -103,7 +103,44 @@ document.addEventListener("DOMContentLoaded", function () {
             } else {
                 $(".top-button").removeClass("visible");
             }
+            Scroll();
         });
+
+        function Scroll() {
+            let contentTop = [];
+            let winTop = $(window).scrollTop();
+            let rangeTop = 200;
+            let topLimit = 200;
+            let page = $('#child-current-page').attr('data-page');
+            $('.navbar-nav li.nav-start').find('a').each(function () {
+
+                let noAddLoad = ['impressum', 'datenschutzerklaerung'];
+                if(!noAddLoad.includes(page)){
+                    let offTop = $(this).attr('href');
+                    let type = document.querySelector(offTop);
+                    if (typeof $(type).offset() === "undefined") {
+                        return false;
+                    }
+                    contentTop.push($(type).offset().top)
+                }
+
+            });
+            if (winTop > topLimit) {
+                $.each(contentTop, function (i) {
+                    if (winTop > contentTop[i] - rangeTop) {
+                        let l = $('.navbar-nav li.nav-start a');
+                        l.removeClass('active').eq(i).addClass('active')
+                    }
+
+                    if (winTop < contentTop[i] - rangeTop) {
+                        //$('.navbar-nav li.nav-start a').removeClass('active');
+                    }
+                });
+            } else {
+
+                $('.navbar-nav li.nav-start a').removeClass('active');
+            }
+        }
 
         // div height, add class to your content
         $(".height-50").css("height", 0.5 * $(window).height());

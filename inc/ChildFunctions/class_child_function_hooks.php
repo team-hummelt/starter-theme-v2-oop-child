@@ -31,9 +31,24 @@ class Child_Function_Hooks
     {
         global $wp_query;
         $paged = $wp_query->get('pagename');
+
+        $kontakt = get_option('tools_hupa_address');
+        $telefon = str_replace([' ', '-', '/', '–'], '', $kontakt[6]['value']);
         ?>
             <div id="theme-current-page" data-page="<?= $paged ?>"></div>
         <?php
+        /*ob_start(function ($output) {
+            if (is_user_logged_in()) {
+                $url = wp_logout_url(site_url());
+                $name = 'Logout';
+            } else {
+                $url = admin_url();
+                $name = 'Login';
+            }
+
+            $output = str_replace('###LOGIN-NAME###', $name, $output);
+            return str_replace('/###LOGIN-URL###', $url, $output);
+        });*/
     }
 
     /**
@@ -60,6 +75,7 @@ class Child_Function_Hooks
 
         // JOB HUPA-STARTER-THEME Video Gallery JS
         wp_enqueue_script('hupa-starter-video-script', get_stylesheet_directory_uri(). '/assets/js/lib/video-gallery.js', array(), $modificated, true);
+        wp_enqueue_script('bootscore-script', get_stylesheet_directory_uri() . '/assets/js/lib/theme.js', false, $modificated, true);
         // JOB HUPA-STARTER-THEME JS
         wp_enqueue_script('hupa-starter-script', get_stylesheet_directory_uri() . '/assets/js/lib/hupa-starter-theme.js', false, $modificated, true);
 
@@ -73,7 +89,8 @@ class Child_Function_Hooks
             'site_title' => get_bloginfo('title'),
             'kontakt' => get_option('tools_hupa_address'),
             'ajax_url' => admin_url('admin-ajax.php'),
-            'nonce' => wp_create_nonce('child_public_handle')
+            'nonce' => wp_create_nonce('child_public_handle'),
+            'is_user_logged_in' => is_user_logged_in()
         ));
     }
 }

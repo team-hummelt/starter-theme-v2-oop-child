@@ -2,4 +2,34 @@
 @import "navigation";
 @import "variables";
 
+body {
+  h1 {
+    //font-size: calc(24px + (32 - 24) * ((100vw - 320px) / (1920 - 320))) !important;
+  }
+}
+
+.text-body {
+  color: $body!important;
+}
+
+@media (max-width: 1199px) {
+
+}
+
+@media (max-width: 991px) {
+
+}
+
+@media (max-width: 768px) {
+
+}
+
+@media (max-width: 576px) {
+
+}
+
+@media (min-width: 1400px) {
+
+}
+
 
