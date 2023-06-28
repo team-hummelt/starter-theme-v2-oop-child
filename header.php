@@ -26,22 +26,28 @@
 <body <?php body_class(); ?>>
 <?php
 $pageSettings = apply_filters('get_page_meta_data', get_the_ID());
+global $wp_query;
+$paged = $wp_query->get('pagename');
+$paged ? $pageCurrent = $paged : $pageCurrent = 'startseite';
 ?>
     <div id="to-top"></div>
-<div id="page" class="site">
+<div id="page" class="site <?= $pageCurrent ?>">
     <header id="masthead" class="site-header">
         <!--==================== TOP AREA ====================-->
 
         <?php if (isset($pageSettings->show_top_area) && $pageSettings->show_top_area): ?>
             <div id="top-area-wrapper" class="py-lg d-lg-flex d-none">
-                <div class="<?= $pageSettings->top_area_container ? 'container' : 'container-fluid' ?> hupa-top-area d-lg-flex d-block flex-wrap justify-content-center align-items-center">
+                <div
+                    class="<?= $pageSettings->top_area_container ? 'container' : 'container-fluid' ?> hupa-top-area d-lg-flex d-block flex-wrap justify-content-center align-items-center">
                     <?php if (is_active_sidebar('top-menu-1') && get_hupa_tools('areainfo_')->aktiv) : ?>
-                        <div class="py-2  order-<?= get_hupa_tools('areainfo_')->position ?>  <?= get_hupa_tools('areainfo_')->css_class ?>">
+                        <div
+                            class="py-2  order-<?= get_hupa_tools('areainfo_')->position ?>  <?= get_hupa_tools('areainfo_')->css_class ?>">
                             <?php dynamic_sidebar('top-menu-1'); ?>
                         </div>
                     <?php endif; ?>
                     <?php if (is_active_sidebar('top-menu-2') && get_hupa_tools('areasocial_')->aktiv) : ?>
-                        <div class="py-2 order-<?= get_hupa_tools('areasocial_')->position ?> <?= get_hupa_tools('areasocial_')->css_class ?>">
+                        <div
+                            class="py-2 order-<?= get_hupa_tools('areasocial_')->position ?> <?= get_hupa_tools('areasocial_')->css_class ?>">
                             <?php dynamic_sidebar('top-menu-2'); ?>
                         </div>
                     <?php endif; ?>
@@ -65,7 +71,8 @@ $pageSettings = apply_filters('get_page_meta_data', get_the_ID());
                         </nav>
                     <?php endif; ?>
                     <?php if (is_active_sidebar('top-menu-3') && get_hupa_tools('areabtn_')->aktiv) : ?>
-                        <div class="py-2 order-<?= get_hupa_tools('areabtn_')->position ?> <?= get_hupa_tools('areabtn_')->css_class ?>">
+                        <div
+                            class="py-2 order-<?= get_hupa_tools('areabtn_')->position ?> <?= get_hupa_tools('areabtn_')->css_class ?>">
                             <?php dynamic_sidebar('top-menu-3'); ?>
                         </div>
                     <?php endif; ?>

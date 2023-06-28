@@ -173,6 +173,7 @@ class Register_Child_Hooks
         $this->loader->add_action('wp_ajax_nopriv_ChildNoAdmin', $functions, 'public_ajax_ChildNoAdmin');
         $this->loader->add_action('wp_ajax_ChildNoAdmin', $functions, 'public_ajax_ChildNoAdmin');
         $this->loader->add_action('wp_head', $functions, 'set_child_header_options');
+        //$this->loader->add_action( 'template_redirect', $functions, 'child_redirect_template_redirect' );
     }
 
     private function define_admin_hooks()
