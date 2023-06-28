@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 'method': 'ajax_test'
             }
 
-            xhr_child_ajax_handle(formData, false, current_page_callback)
+            //xhr_child_ajax_handle(formData, false, current_page_callback)
         }
 
         function current_page_callback() {
@@ -72,20 +72,20 @@ document.addEventListener("DOMContentLoaded", function () {
             let w = 0;
             if (leftBox.length !== 0) {
                 if (width > 1400) {
-                    w = (width - 1332) / 2
+                    w = (width - 1332) / 2 + 30
                     leftBox.css('marginLeft', (w) + 'px')
                 }
                 if (width < 1400 && width > 1200) {
-                    w = (width - 1152) / 2
+                    w = (width - 1152) / 2 + 30
                     leftBox.css('marginLeft', (w) + 'px')
                 }
                 if (rightBox.length !== 0) {
                     if (width > 1400) {
-                        w = (width - 1332) / 2
+                        w = (width - 1332) / 2 + 30
                         rightBox.css('marginRight', w + 'px')
                     }
                     if (width < 1400 && width > 1200) {
-                        w = (width - 1152) / 2
+                        w = (width - 1152) / 2 + 30
                         rightBox.css('marginRight', w + 'px')
                     }
                 }

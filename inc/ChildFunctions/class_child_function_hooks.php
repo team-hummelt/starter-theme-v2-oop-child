@@ -33,7 +33,7 @@ class Child_Function_Hooks
         $paged = $wp_query->get('pagename');
 
         $kontakt = get_option('tools_hupa_address');
-        $telefon = str_replace([' ', '-', '/', '–'], '', $kontakt[6]['value']);
+        //$telefon = str_replace([' ', '-', '/', '–'], '', $kontakt[6]['value']);
         ?>
             <div id="theme-current-page" data-page="<?= $paged ?>"></div>
         <?php
@@ -49,6 +49,23 @@ class Child_Function_Hooks
             $output = str_replace('###LOGIN-NAME###', $name, $output);
             return str_replace('/###LOGIN-URL###', $url, $output);
         });*/
+    }
+
+    public function child_redirect_template_redirect(): void {
+        ob_start( function ( $output ) {
+            $term = get_term(get_nav_menu_locations()['footer-widget-menu'], 'nav_menu');
+            $items = wp_get_nav_menu_items( $term->term_id);
+            $i=1;
+            $menu = '<ul class="footer-menu-wrapper list-unstyled d-md-flex d-block flex-wrap align-items-center justify-content-center">';
+            foreach ($items as $item){
+                $i == 1 ? $me = 'me-md-4' : $me = '';
+                $menu .= '<li><a class="footer-menu-item text-decoration-none '.$me.'" href="'.$item->url.'">'.$item->title.'</a></li>';
+                $i++;
+            }
+            $menu .= '</ul>';
+            $output = str_replace('###FOOTER-MENU###', $menu, $output);
+            return $output;
+        });
     }
 
     /**

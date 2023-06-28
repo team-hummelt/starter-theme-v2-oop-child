@@ -104,7 +104,7 @@ $pageBottomFooter = $pageSettings->show_bottom_footer;
 <?php endif; ?>
 
 <div class="top-button <?=get_hupa_option( 'scroll_top' ) ?'':'d-none'?>">
-    <a href="#to-top" class="btn btn-scroll-to-top shadow"><i class="fa fa-chevron-up"></i></a>
+    <a href="#to-top" class="btn btn-scroll-to-top shadow"><i class="bi bi-chevron-up"></i></a>
 </div>
 
 </div><!-- #page -->
